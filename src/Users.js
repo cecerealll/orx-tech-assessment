@@ -37,7 +37,7 @@ export default function Users({
                     return (
                         <details key={id}>
                             <summary>{name}</summary>
-                            <ul>
+                            <ul className='user'>
                                 <li>{email}</li>
                                 <li>{phone}</li>
                                 <li>{address.street}</li>

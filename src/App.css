@@ -5,5 +5,8 @@
 
 .searchInput {
   margin-bottom: 30px;
-  
+}
+
+.user {
+  list-style: none;
 }
