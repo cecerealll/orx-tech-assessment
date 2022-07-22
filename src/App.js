@@ -41,13 +41,9 @@ function App() {
 
     return (
         <div className='App'>
-            <input
-                type='text'
-                onChange={handleChange}
-                className={"searchInput"}
-            />
-            <select defaultValue onChange={handleSelect}>
-                <option value></option>
+            <input type='text' onChange={handleChange} className='searchBar' />
+            <select defaultValue onChange={handleSelect} className='select'>
+                <option value=''></option>
                 <option value='com'>.com</option>
                 <option value='net'>.net</option>
                 <option value='other'>other</option>

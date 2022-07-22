@@ -1,12 +1,61 @@
 .App {
   text-align: center;
   padding: 50px;
+  font-size: 16px;
 }
 
-.searchInput {
+.searchBar {
+  height: 20px;
   margin-bottom: 30px;
+}
+
+.select {
+  height: 25px;
+}
+
+
+.title {
+  font-size: 1.5rem;
 }
 
 .user {
   list-style: none;
+}
+
+.metrics p {
+  display: inline-block;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.todo-list {
+  margin: 0 auto;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo p {
+  margin: 0 8px;
+}
+
+.delete-button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+}
+
+.delete-button:hover {
+  cursor: pointer;
 }

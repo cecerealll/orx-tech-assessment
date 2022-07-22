@@ -36,34 +36,47 @@ export default function Users({
                 .map(({ id, name, email, phone, address, website }) => {
                     return (
                         <details key={id}>
-                            <summary>{name}</summary>
+                            <summary className='title'>{name}</summary>
                             <ul className='user'>
                                 <li>{email}</li>
                                 <li>{phone}</li>
-                                <li>{address.street}</li>
+                                <li>
+                                    {address.street}, {address.suite},
+                                    {address.city}, {address.zipcode}
+                                </li>
                                 <li>{website}</li>
-                                <li>
-                                    completed:{" "}
-                                    {todosByUser[id]?.reduce(
-                                        (acc, curr) =>
-                                            (acc += curr.completed ? 1 : 0),
-                                        0
-                                    )}
+                                <li className='metrics'>
+                                    <p>
+                                        <span className='green'>
+                                            completed:
+                                        </span>
+                                        {todosByUser[id]?.reduce(
+                                            (acc, curr) =>
+                                                (acc += curr.completed ? 1 : 0),
+                                            0
+                                        )}
+                                    </p>
+                                    &nbsp;
+                                    <p>
+                                        <span className='red'>incomplete:</span>
+                                        {todosByUser[id]?.reduce(
+                                            (acc, curr) =>
+                                                (acc += !curr.completed
+                                                    ? 1
+                                                    : 0),
+                                            0
+                                        )}
+                                    </p>
                                 </li>
-                                <li>
-                                    incomplete:{" "}
-                                    {todosByUser[id]?.reduce(
-                                        (acc, curr) =>
-                                            (acc += !curr.completed ? 1 : 0),
-                                        0
-                                    )}
-                                </li>
+                                <li></li>
                             </ul>
-                            <div>
+                            <div className='todo-list'>
                                 {todosByUser[id]?.map(
                                     ({ id: todoId, title, completed }) => {
                                         return (
-                                            <div key={todoId}>
+                                            <div
+                                                key={todoId}
+                                                className={"todo"}>
                                                 <input
                                                     type='checkbox'
                                                     checked={completed}
@@ -73,6 +86,7 @@ export default function Users({
                                                 />
                                                 <p>{title}</p>
                                                 <button
+                                                    className='delete-button'
                                                     onClick={() =>
                                                         handleDelete(todoId)
                                                     }>
